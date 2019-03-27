@@ -131,22 +131,26 @@ document.querySelector('#my-form').addEventListener('submit', (e) => {
     if (name === "" || phone === "" || gender === "" || email === "" || subject === "" || message === "") {
         UI.showAlert('Please fill in all fields', 'danger');
     } else {
-        const infor = new Information(name, gender, phone, email, subject, message);
+        if (gender === "male" || gender === "Male" || gender === "female" || gender === "Female") {
+            const infor = new Information(name, gender, phone, email, subject, message);
 
-        UI.addInforToList(infor);
+            UI.addInforToList(infor);
 
-        Store.addInfor(infor);
+            Store.addInfor(infor);
 
-        UI.showAlert('Contact Added', 'success');
+            UI.showAlert('Contact Added', 'success');
 
-        UI.clearFields();
+            UI.clearFields();
+        }else{
+            UI.showAlert('Please fill in Gender => "Male" or "Female"','danger');
+        }
     }
 });
 
-document.querySelector('#infor-list').addEventListener('click',(e) =>{
+document.querySelector('#infor-list').addEventListener('click', (e) => {
     UI.deleteInfor(e.target);
 
-    Store.removeInfor(e.target.parentElement.previousElementSibling.textContent);
+    Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
 
-    UI.showAlert('Contact Removed','success');
+    UI.showAlert('Contact Removed', 'success');
 });
