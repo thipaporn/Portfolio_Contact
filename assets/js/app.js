@@ -1,40 +1,3 @@
-// const myForm = document.querySelector('#my-form')
-// const name = document.querySelector('#name');
-// const phone = document.querySelector('#phone');
-// const gender = document.querySelector('#gender');
-// const email = document.querySelector('#email');
-// const subject = document.querySelector('#subject');
-// const message = document.querySelector('#message');
-
-// myForm.addEventListener('submit', onSupmit);
-
-// function onSupmit(e) {
-//     e.preventDefault();
-//     if (name.value === '' || phone.value === '' || gender.value === '' || email.value === '' || subject.value === '' || message.value === '') {
-//         alert('Please enter all field');
-//         msg.classList.add('error');
-//         msg.innerHTML = 'Please enter all fields';
-//     }
-//     else{
-//         // if (gender.value !== 'male' || gender.value !== 'Male' || gender.value !== 'female' || gender.value !== 'Female') {
-//         //     alert('Please enter Gender : Male or FeMale');
-//         //     msg.classList.add('error');
-//         //     msg.innerHTML = 'Please enter Gender : Male or FeMale';
-
-//             // const table = document.createElement('li');
-//             const li = document.createElement('li');
-//             const text = document.createTextNode(`${name.value}:${email.value}`);
-//             li.appendChild(text);
-//             // console.log(li);
-
-//             userList.appendChild(li);
-
-//             nameInput.value = '';
-//             emailInput.value = '';
-
-//     }
-// }
-
 class Information {
     constructor(name, gender, phone, email, subject, message) {
         this.name = name;
@@ -62,6 +25,7 @@ class UI {
         <td>${Infor.email}</td>
         <td>${Infor.subject}</td>
         <td>${Infor.message}</td>
+        <td><a href="#" class="btn btn-danger btn-sm delete"> X </a></td>
         `;
         list.appendChild(row);
     }
@@ -150,7 +114,7 @@ document.querySelector('#my-form').addEventListener('submit', (e) => {
 document.querySelector('#infor-list').addEventListener('click', (e) => {
     UI.deleteInfor(e.target);
 
-    Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
+    Store.removeInfor(e.target.parentElement.previousElementSibling.textContent);
 
     UI.showAlert('Contact Removed', 'success');
 });
