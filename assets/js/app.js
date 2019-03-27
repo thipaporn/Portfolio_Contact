@@ -122,7 +122,7 @@ document.querySelector('#my-form').addEventListener('submit', (e) => {
     e.preventDefault();
 
     const name = document.querySelector('#name').value;
-    const gender = document.querySelector('#gemder').value;
+    const gender = document.querySelector('#gender').value;
     const phone = document.querySelector('#phone').value;
     const email = document.querySelector('#email').value;
     const subject = document.querySelector('#subject').value;
