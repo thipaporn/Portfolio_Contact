@@ -2435,6 +2435,10 @@ input, select, textarea {
 			text-align: center;
 		}  
 
+			table.contact td{
+				padding: 10px;
+			}
+
 		table tbody tr {
 			border: solid 2px #f4f4f4;
 			border-left: 0;
