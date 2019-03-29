@@ -2430,7 +2430,7 @@ input, select, textarea {
 			white-space: nowrap; 
 			text-overflow: "----"; 
 			table-layout: auto;
-			width: 97%;
+			width: 100%;
 			margin-left: 1.5em;
 			text-align: center;
 		}  
