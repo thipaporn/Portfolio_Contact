@@ -69,11 +69,11 @@ class Store {
         informa.push(infor);
         localStorage.setItem('informa', JSON.stringify(informa));
     }
-    static removeInfor(isbn) {
+    static removeInfor(message) {
         const informa = Store.getInfor();
 
         informa.forEach((infor, index) => {
-            if (infor.isbn === isbn) {
+            if (infor.message === message) {
                 Informa.splice(index, 1);
             }
         });
