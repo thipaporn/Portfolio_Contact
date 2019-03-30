@@ -42,7 +42,7 @@ class UI {
         const form = document.querySelector('#my-form');
         container.insertBefore(div, form);
 
-        setTimeout(() => document.querySelector('.alert').remove(), 5000);
+        setTimeout(() => document.querySelector('.alert').remove(), 4000);
     }
     static clearFields() {
         document.querySelector('#name').value = "";
